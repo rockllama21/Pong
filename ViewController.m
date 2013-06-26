@@ -18,6 +18,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+      [self.navigationItem setTitle:@"Pong"];
+    [self.navigationController.navigationBar setBarStyle: UIBarStyleBlack];
+    
+    
+   // [self.view setBackgroundColor: [UIColor blackColor]];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
