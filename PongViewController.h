@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PongViewController : UIViewController
+@interface PongViewController : UIViewController{
+    double count;
+}
 
 @property(strong, nonatomic)UIViewController* optionsViewController;
+@property(strong, atomic)NSTimer* timer;
+
 
 -(void)switchToOptionsView;
+-(void)timerUpdate;
 
 @end
