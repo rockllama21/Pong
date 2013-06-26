@@ -8,10 +8,10 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "PongViewController.h"
 
 @implementation AppDelegate
-@synthesize viewController, optionsViewController, navigationViewController;
+@synthesize viewController, navigationViewController;
 //this method inits all view and nav controllers
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -19,19 +19,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-         self.optionsViewController = [[ViewController alloc] initWithNibName:@"OptionsViewController" bundle:nil];
+        self.viewController = [[PongViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.viewController = [[PongViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
         
     }
     //initialize our nav view controller
     self.navigationViewController=[[UINavigationController alloc]initWithRootViewController:viewController];
     
+    
     //config our nav controller
   
     self.window.rootViewController = self.navigationViewController;
-    self.window.rootViewController = self.navigationViewController;
+  
    
     [self.window makeKeyAndVisible];
     return YES;
